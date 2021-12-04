@@ -10,7 +10,6 @@ from Music import MusicCommands
 from AdminCommands import AdminCommands
 from FunCommands import FunCommands
 from HelpfulCommands import HelpfulCommands
-import keep_alive
 import aiohttp
 from discord import Member
 from discord.ext.commands import has_permissions, MissingPermissions
@@ -228,5 +227,4 @@ bot.add_cog(FunCommands(bot))
 bot.add_cog(HelpfulCommands(bot))
 bot.add_cog(AdminCommands(bot))
 bot.add_cog(MusicCommands(bot))
-keep_alive.keep_alivepls()
 bot.run(os.getenv('TOKEN2'))
