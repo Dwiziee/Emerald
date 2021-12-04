@@ -1,0 +1,1 @@
+worker: random bot.py
