@@ -1,1 +1,1 @@
-worker: random bot.py
+worker: Emerald.py
