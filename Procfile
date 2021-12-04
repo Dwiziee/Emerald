@@ -1,1 +1,1 @@
-worker: Emerald.py
+worker: python bot.py
