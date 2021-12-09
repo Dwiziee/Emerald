@@ -20,7 +20,7 @@ intents.members = True
 
 bot = commands.Bot(command_prefix="=")
 
-greetings = ('hi', 'hello', 'hii,', 'hiii')
+greetings = ('hi', 'hello', 'hii,', 'hiii', 'Hi', 'gday','GDAY')
 swears = ('kek')
 warnings = ('shut up', 'shut up or i will bonk you',          'stop it please')
 deaths = ('farted too hard', 'fell from a tree',
