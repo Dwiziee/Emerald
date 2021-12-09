@@ -21,8 +21,9 @@ intents.members = True
 bot = commands.Bot(command_prefix="=")
 
 greetings = ('hi', 'hello', 'hii,', 'hiii', 'Hi', 'gday','GDAY')
-swears = ('kek')
-warnings = ('shut up', 'shut up or i will bonk you',          'stop it please')
+responses = ('gday', 'sup', 'yoo', 'wasgud')
+swears = ('dwiz sucks')
+warnings = ('shut up', 'no')
 deaths = ('farted too hard', 'fell from a tree',
           'ate a lot of cheese and died', 'got shot by the police',
           'forgot to breathe', 'watched tiktok and died to cringe','poked a stick at a grizzly bear, which then becomes angry and eats his head off.')
@@ -41,7 +42,7 @@ async def on_message(message):
 		return
 
 	if message.content.startswith(greetings):
-		await message.channel.send('hii')
+		await message.channel.send(random.choice(responses))
 
 	if message.content.startswith('i am fine'):
 		await message.channel.send('oo nice to hear')
@@ -67,8 +68,6 @@ async def on_message(message):
 		await message.channel.send('Night nicey')
 	if message.content.startswith('aussie'):
 		await message.channel.send('Aussie is awesomeee <3')
-
-
 
 @bot.command(name="kill", help= "Kills the mentioned user duh",pass_context=True)
 async def kill(ctx, user):
