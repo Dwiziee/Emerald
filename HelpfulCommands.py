@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import datetime
 from datetime import timedelta
+from datetime import datetime as dt
 
 class HelpfulCommands(commands.Cog):
     def __init__(self, client):
@@ -113,7 +114,7 @@ class HelpfulCommands(commands.Cog):
                 await msg.add_reaction('🔎')
 
                 counter = 0
-                async for message in channel.history(limit=5000, after=datetime.today() - timedelta(days=timeframe)):
+                async for message in channel.history(limit=5000, after=dt.today() - timedelta(days=timeframe)):
                     if message.author.id == user.id:
                         counter += 1
 
