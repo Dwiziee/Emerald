@@ -21,6 +21,7 @@ intents.members = True
 
 bot = commands.Bot(command_prefix="=")
 
+responses = ('gday', 'sup', 'yoo', 'wasgud')
 swears = ('dwiz sucks')
 warnings = ('shut up', 'no')
 deaths = ('farted too hard', 'fell from a tree',
