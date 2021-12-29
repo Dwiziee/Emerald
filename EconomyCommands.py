@@ -43,6 +43,9 @@ class EconomyCommands(commands.Cog):
       data[str(ctx.author.id)]["Coins"] += begearnings
       with open("users.json","w") as f:
         json.dump(data,f)
+  
+
+  
 
 
 def setup(client):

@@ -20,7 +20,6 @@ intents.members = True
 
 bot = commands.Bot(command_prefix="=")
 
-greetings = ('hi', 'hello', 'hii,', 'hiii', 'Hi', 'gday','GDAY')
 responses = ('gday', 'sup', 'yoo', 'wasgud')
 swears = ('dwiz sucks')
 warnings = ('shut up', 'no')
@@ -41,12 +40,6 @@ async def on_message(message):
 	if message.author == bot.user:
 		return
 
-	if message.content.startswith(greetings):
-		await message.channel.send(random.choice(responses))
-
-	if message.content.startswith('i am fine'):
-		await message.channel.send('oo nice to hear')
-
 	if message.content.startswith(swears):
 		await message.channel.send(random.choice(warnings))
 
@@ -59,16 +52,6 @@ async def on_message(message):
 		await message.channel.send(
 		    'okay this is the link to your marks https://www.thisworldthesedays.com/marksdotcom.html'
 		)
-	if message.content.startswith('worth'):
-		await message.channel.send('worth cleans spoon :D')
-	if message.content.startswith('dwiz'):
-		await message.channel.send('dwiz made me')
-	await bot.process_commands(message)
-	if message.content.startswith('night'):
-		await message.channel.send('Night nicey')
-	if message.content.startswith('aussie'):
-		await message.channel.send('Aussie is awesomeee <3')
-
 @bot.command(name="kill", help= "Kills the mentioned user duh",pass_context=True)
 async def kill(ctx, user):
 	await ctx.send(f"{user} {random.choice(deaths)}")
