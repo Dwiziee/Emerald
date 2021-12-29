@@ -10,6 +10,7 @@ from Music import MusicCommands
 from AdminCommands import AdminCommands
 from FunCommands import FunCommands
 from HelpfulCommands import HelpfulCommands
+from EconomyCommands import EconomyCommands
 import aiohttp
 from discord import Member
 from discord.ext.commands import has_permissions, MissingPermissions
@@ -205,6 +206,7 @@ async def setdelay(ctx, seconds:int):
 async def invite(ctx):
   await ctx.send('Use this link to invite me to any server!\n https://discord.com/api/oauth2/authorize?client_id=896989477615063100&permissions=141167689207&scope=bot')
 
+bot.add_cog(EconomyCommands(bot))
 bot.add_cog(FunCommands(bot))
 bot.add_cog(HelpfulCommands(bot))
 bot.add_cog(AdminCommands(bot))
