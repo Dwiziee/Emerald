@@ -11,23 +11,25 @@ from AdminCommands import AdminCommands
 from FunCommands import FunCommands
 from HelpfulCommands import HelpfulCommands
 from EconomyCommands import EconomyCommands
+import keep_alive
 import aiohttp
 from discord import Member
 from discord.ext.commands import has_permissions, MissingPermissions
-
+from PIL import Image
+from io import BytesIO
+import tweepy
 
 intents = discord.Intents.default()
 intents.members = True
 
 bot = commands.Bot(command_prefix="=")
 
-responses = ('gday', 'sup', 'yoo', 'wasgud')
-swears = ('dwiz sucks')
-warnings = ('shut up', 'no')
+greetings = ('hi', 'hello', 'hii,', 'hiii')
+swears = ('kek')
+warnings = ('shut up', 'shut up or i will bonk you',          'stop it please')
 deaths = ('farted too hard', 'fell from a tree',
           'ate a lot of cheese and died', 'got shot by the police',
           'forgot to breathe', 'watched tiktok and died to cringe','poked a stick at a grizzly bear, which then becomes angry and eats his head off.')
-
 
 @bot.event
 async def on_ready():
@@ -53,6 +55,18 @@ async def on_message(message):
 		await message.channel.send(
 		    'okay this is the link to your marks https://www.thisworldthesedays.com/marksdotcom.html'
 		)
+	if message.content.startswith('worth'):
+		await message.channel.send('worth cleans spoon :D')
+	if message.content.startswith('dwiz'):
+		await message.channel.send('dwiz made me')
+	await bot.process_commands(message)
+	if message.content.startswith('night'):
+		await message.channel.send('Night nicey')
+	if message.content.startswith('aussie'):
+		await message.channel.send('Aussie is awesomeee <3')
+
+
+
 @bot.command(name="kill", help= "Kills the mentioned user duh",pass_context=True)
 async def kill(ctx, user):
 	await ctx.send(f"{user} {random.choice(deaths)}")
@@ -211,4 +225,5 @@ bot.add_cog(FunCommands(bot))
 bot.add_cog(HelpfulCommands(bot))
 bot.add_cog(AdminCommands(bot))
 bot.add_cog(MusicCommands(bot))
+keep_alive.keep_alivepls()
 bot.run(os.getenv('TOKEN2'))

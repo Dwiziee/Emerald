@@ -6,7 +6,6 @@ import httpx as requests
 import json
 import random
 
-
 class FunCommands(commands.Cog):
 
     def __init__(self, client):
@@ -60,6 +59,7 @@ class FunCommands(commands.Cog):
       if not poemguy:
         poemguy = ctx.message.author
       await ctx.send(f"{poemguy.mention} farted, australia blasted, america fainted, africa exploded")  
+
     
 def setup(client):
     client.add_cog(FunCommands(client))
