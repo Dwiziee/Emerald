@@ -58,7 +58,7 @@ async def on_message(message):
 		await message.channel.send('dwiz made me')
 	await bot.process_commands(message)
 	if message.content.startswith('night'):
-		await message.channel.send('Night nicey')
+		await message.channel.send('Night not nicey')
 	if message.content.startswith('aussie'):
 		await message.channel.send('Aussie is awesomeee <3')
 
